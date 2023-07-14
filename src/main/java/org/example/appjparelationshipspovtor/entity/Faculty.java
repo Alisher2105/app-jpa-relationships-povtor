@@ -1,2 +1,23 @@
-package org.example.appjparelationshipspovtor.entity;public class Faculty {
+package org.example.appjparelationshipspovtor.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Faculty {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
+
+    @ManyToOne
+    private University university;
+
 }
